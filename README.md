@@ -4,7 +4,6 @@ Handwritten Digit Recognition with opencv and deeplearning4j
 <HTML>
 <HEAD>
 	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
-	<TITLE></TITLE>
 	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
 	<META NAME="AUTHOR" CONTENT="sangeeta">
 	<META NAME="CREATED" CONTENT="20190217;120900000000000">
@@ -15,7 +14,6 @@ Handwritten Digit Recognition with opencv and deeplearning4j
 	<META NAME="LinksUpToDate" CONTENT="false">
 	<META NAME="ScaleCrop" CONTENT="false">
 	<META NAME="ShareDoc" CONTENT="false">
-	<STYLE TYPE="text/css">
 	<!--
 		@page { size: 8.5in 11in; margin: 1in }
 		P { margin-bottom: 0.1in; direction: ltr; color: #00000a; line-height: 115%; text-align: left; widows: 2; orphans: 2 }
