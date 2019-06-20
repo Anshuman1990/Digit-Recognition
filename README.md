@@ -14,15 +14,7 @@ Handwritten Digit Recognition with opencv and deeplearning4j
 	<META NAME="LinksUpToDate" CONTENT="false">
 	<META NAME="ScaleCrop" CONTENT="false">
 	<META NAME="ShareDoc" CONTENT="false">
-	<!--
-		@page { size: 8.5in 11in; margin: 1in }
-		P { margin-bottom: 0.1in; direction: ltr; color: #00000a; line-height: 115%; text-align: left; widows: 2; orphans: 2 }
-		P.western { font-family: "Calibri", serif; font-size: 11pt; so-language: en-US }
-		P.cjk { font-family: ; font-size: 11pt; so-language: en-US }
-		P.ctl { font-family: ; font-size: 11pt; so-language: ar-SA }
-		A:link { color: #0000ff; so-language: zxx }
-	-->
-	</STYLE>
+	
 </HEAD>
 <BODY LANG="en-US" TEXT="#00000a" LINK="#0000ff" DIR="LTR">
 <P CLASS="western" STYLE="margin-bottom: 0.14in"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Architecture:</B></FONT></FONT></P>
@@ -31,24 +23,7 @@ Handwritten Digit Recognition with opencv and deeplearning4j
 </P>
 <P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in"><FONT FACE="TimesNewRoman, serif"><FONT SIZE=3><B>Fig.
 Framework of Handwritten Character Recognition System</B></FONT></FONT></P>
-<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
+
 <P CLASS="western" STYLE="margin-bottom: 0.14in"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Modules:</B></FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-bottom: 0in; line-height: 100%">
 <FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>1. Preprocessing</B></FONT></FONT></P>
@@ -123,34 +98,7 @@ intelligence.</FONT></FONT></P>
 <P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in"><IMG SRC="images/REPORT-0_html_a602d1e1.png" NAME="Picture 13" ALIGN=BOTTOM HSPACE=1 WIDTH=415 HEIGHT=286 BORDER=0></P>
 <P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.14in"><FONT FACE="TimesNewRoman, serif"><FONT SIZE=3><B>Fig.
 Classification Techniques</B></FONT></FONT></P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
-<P CLASS="western" STYLE="margin-bottom: 0.14in"><BR><BR>
-</P>
+
 <P CLASS="western" STYLE="margin-bottom: 0.14in"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Algorithm:</B></FONT></FONT></P>
 <P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: -0.02in; margin-top: 0.31in; margin-bottom: 0in; background: #ffffff">
 <FONT FACE="Times New Roman, serif"><FONT SIZE=3><B>Nearest Neighbor:</B></FONT></FONT></P>
