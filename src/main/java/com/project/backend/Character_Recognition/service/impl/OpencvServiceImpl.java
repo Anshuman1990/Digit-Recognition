@@ -1,15 +1,17 @@
-package com.project.backend.Character_Recognition.service;
+package com.project.backend.Character_Recognition.service.impl;
 
 import com.project.backend.Character_Recognition.deeplearning4j.DigitDetector;
 import com.project.backend.Character_Recognition.deeplearning4j.ui.ImageUtils;
 import com.project.backend.Character_Recognition.opencv.FeatureExtraction;
+import com.project.backend.Character_Recognition.service.OpencvService;
+import com.project.backend.Character_Recognition.service.Path;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
 import org.deeplearning4j.nn.modelimport.keras.InvalidKerasConfigurationException;
 import org.deeplearning4j.nn.modelimport.keras.UnsupportedKerasConfigurationException;
-import org.opencv.core.Point;
 import org.opencv.core.*;
+import org.opencv.core.Point;
 import org.opencv.highgui.HighGui;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
@@ -21,14 +23,14 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.*;
+import java.util.List;
 
 @Service
 public class OpencvServiceImpl implements OpencvService {
 
     @Value("classpath:dataset/digit/*")
-    private Resource[] resoucesDataset;
+    private Resource[] resources;
 
 
     private DigitDetector digitDetector;
@@ -196,7 +198,7 @@ public class OpencvServiceImpl implements OpencvService {
                     List<MatOfPoint> contours_inner = new LinkedList<>();
                     Mat hierarchy_inner = new Mat();
                     Imgcodecs.imwrite(path + x + "_" + y + ".jpg", test_result);
-                    Imgproc.findContours(test_result, contours_inner, hierarchy_inner, Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE,new Point(3,3));
+                    Imgproc.findContours(test_result, contours_inner, hierarchy_inner, Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE, new Point(3, 3));
                     contours_inner.forEach(matOfPoint1 -> {
                         double area = Imgproc.contourArea(matOfPoint1);
                         Rect rect_test = Imgproc.boundingRect(matOfPoint1);
@@ -256,7 +258,7 @@ public class OpencvServiceImpl implements OpencvService {
 
     public void training() throws IOException {
         FeatureExtraction extraction = new FeatureExtraction();
-        for (Resource resource : resoucesDataset) {
+        for (Resource resource : resources) {
             if (resource.getFile().isDirectory()) {
                 File[] files = resource.getFile().listFiles();
                 for (File file : files) {
