@@ -7,6 +7,7 @@ import org.opencv.features2d.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.utils.Converters;
+import org.opencv.xfeatures2d.BriefDescriptorExtractor;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,14 +22,13 @@ public class FeatureExtraction {
 
     public MatOfKeyPoint ExtractORBFeatures(Mat inputImage) {
 
-        FeatureDetector features = FeatureDetector.create(FeatureDetector.ORB);
+        FastFeatureDetector features = FastFeatureDetector.create(FastFeatureDetector.FAST_N);
         MatOfKeyPoint objectKeyPoints = new MatOfKeyPoint();
         features.detect(inputImage, objectKeyPoints);
         KeyPoint[] keypoints = objectKeyPoints.toArray();
 //        System.out.println(keypoints);
-
         MatOfKeyPoint objectDescriptors = new MatOfKeyPoint();
-        DescriptorExtractor descriptorExtractor = DescriptorExtractor.create(DescriptorExtractor.ORB);
+        BriefDescriptorExtractor descriptorExtractor = BriefDescriptorExtractor.create();
 //        System.out.println("Computing descriptors...");
         descriptorExtractor.compute(inputImage, objectKeyPoints, objectDescriptors);
 
@@ -46,10 +46,10 @@ public class FeatureExtraction {
 
     public LinkedList<DMatch> DetectORBFeature(Mat img1, Mat keypoints1) {
         //        List<ObjectDescriptors> listObjectDescriptors = MyVideoCapture.getObjectList();
-        FeatureDetector features = FeatureDetector.create(FeatureDetector.ORB);
+        FastFeatureDetector features = FastFeatureDetector.create(FastFeatureDetector.FAST_N);
         HashMap<String, Integer> map = new HashMap<String, Integer>();
 //        for (ObjectDescriptors obj : listObjectDescriptors) {
-        DescriptorExtractor descriptorExtractor = DescriptorExtractor.create(DescriptorExtractor.ORB);
+        BriefDescriptorExtractor descriptorExtractor = BriefDescriptorExtractor.create();
         MatOfKeyPoint sceneKeyPoints = new MatOfKeyPoint();
         MatOfKeyPoint sceneDescriptors = new MatOfKeyPoint();
 //        System.out.println("Detecting key points in background image..." + img1);
@@ -106,8 +106,8 @@ public class FeatureExtraction {
 
         Mat homography = new Mat(3, 3, CvType.CV_64F);
         LinkedList<DMatch> goodMatchesList = new LinkedList<DMatch>();
-        FeatureDetector features = FeatureDetector.create(FeatureDetector.AKAZE);
-        DescriptorExtractor descriptorExtractor = DescriptorExtractor.create(DescriptorExtractor.AKAZE);
+        FastFeatureDetector features = FastFeatureDetector.create(FastFeatureDetector.FAST_N);
+        BriefDescriptorExtractor descriptorExtractor = BriefDescriptorExtractor.create();
         MatOfKeyPoint objectKeyPoints = new MatOfKeyPoint();
         features.detect(object, objectKeyPoints);
         KeyPoint[] keypoints = objectKeyPoints.toArray();

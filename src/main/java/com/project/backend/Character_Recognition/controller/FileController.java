@@ -6,11 +6,11 @@ import com.project.backend.Character_Recognition.service.FileStorageService;
 import com.project.backend.Character_Recognition.service.HelloService;
 import com.project.backend.Character_Recognition.service.ProjectService;
 import com.project.backend.Character_Recognition.utils.BuildResponse;
-import com.project.backend.Character_Recognition.utils.UploadFileResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.deeplearning4j.nn.modelimport.keras.InvalidKerasConfigurationException;
-import org.deeplearning4j.nn.modelimport.keras.UnsupportedKerasConfigurationException;
+import jakarta.servlet.http.HttpServletRequest;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfigurationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,7 +49,7 @@ public class FileController {
     private String fileName = "";
 
     @ApiOperation(value = "Upload File", notes = "REST api for uploading file", produces = "application/json", httpMethod = "POST")
-    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST, produces = "application/json")
+    @PostMapping(value = "/uploadFile", produces = "application/json")
     public @ResponseBody
     ResponseEntity uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
         String fileName = fileStorageService.storeFile(file);
@@ -66,9 +65,9 @@ public class FileController {
     }
 
     @ApiOperation(value = "Student Details", notes = "Login REST Call", produces = "application/json", httpMethod = "POST")
-    @RequestMapping(value = "/studentFileUpload", method = RequestMethod.POST, produces = "application/json")
+    @PostMapping(value = "/studentFileUpload", produces = "application/json")
     public @ResponseBody
-    ResponseEntity login(@RequestBody UploadDTO uploadDTO) throws IOException, InterruptedException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
+    ResponseEntity login(@RequestBody UploadDTO uploadDTO) throws IOException, InterruptedException, UnsupportedKerasConfigurationException, InvalidKerasConfigurationException {
         this.response.clean();
         Map response = new HashMap<>();
         String resp = projectService.uploadImage(this.fileName,uploadDTO.getStudentName(),uploadDTO.getUsn());

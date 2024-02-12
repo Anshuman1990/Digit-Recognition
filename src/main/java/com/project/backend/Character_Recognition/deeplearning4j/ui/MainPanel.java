@@ -3,8 +3,8 @@ package com.project.backend.Character_Recognition.deeplearning4j.ui;
 
 import com.project.backend.Character_Recognition.deeplearning4j.DigitDetector;
 import com.project.backend.Character_Recognition.deeplearning4j.Main;
-import org.deeplearning4j.nn.modelimport.keras.InvalidKerasConfigurationException;
-import org.deeplearning4j.nn.modelimport.keras.UnsupportedKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfigurationException;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

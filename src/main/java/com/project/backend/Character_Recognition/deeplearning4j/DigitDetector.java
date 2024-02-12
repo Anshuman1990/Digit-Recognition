@@ -2,9 +2,9 @@ package com.project.backend.Character_Recognition.deeplearning4j;
 
 
 import com.project.backend.Character_Recognition.deeplearning4j.ui.ImageUtils;
-import org.deeplearning4j.nn.modelimport.keras.InvalidKerasConfigurationException;
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport;
-import org.deeplearning4j.nn.modelimport.keras.UnsupportedKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfigurationException;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.cpu.nativecpu.NDArray;
@@ -51,7 +51,7 @@ public class DigitDetector {
         int largestIndex = 0;
         double largestValue = Double.MIN_VALUE;
 
-        for (int i = 0; i < array.lengthLong(); i++) {
+        for (int i = 0; i < array.rows(); i++) {
             if (array.getDouble(i) > largestValue) {
                 largestIndex = i;
                 largestValue = array.getDouble(i);

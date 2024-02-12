@@ -2,8 +2,8 @@ package com.project.backend.Character_Recognition.deeplearning4j;
 
 
 import com.project.backend.Character_Recognition.deeplearning4j.ui.MainPanel;
-import org.deeplearning4j.nn.modelimport.keras.InvalidKerasConfigurationException;
-import org.deeplearning4j.nn.modelimport.keras.UnsupportedKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfigurationException;
 
 import javax.swing.*;
 import java.awt.*;
