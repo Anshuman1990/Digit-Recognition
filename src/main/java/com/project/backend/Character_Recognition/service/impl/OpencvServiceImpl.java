@@ -8,8 +8,8 @@ import com.project.backend.Character_Recognition.service.Path;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
-import org.deeplearning4j.nn.modelimport.keras.InvalidKerasConfigurationException;
-import org.deeplearning4j.nn.modelimport.keras.UnsupportedKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
+import org.deeplearning4j.nn.modelimport.keras.exceptions.UnsupportedKerasConfigurationException;
 import org.opencv.core.*;
 import org.opencv.core.Point;
 import org.opencv.highgui.HighGui;
@@ -36,10 +36,10 @@ public class OpencvServiceImpl implements OpencvService {
     private DigitDetector digitDetector;
 
     @Override
-    public Map<String, Object> processDataset(File file) throws IOException, InterruptedException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
+    public Map<String, Object> processDataset(File file) throws IOException, InterruptedException, UnsupportedKerasConfigurationException, InvalidKerasConfigurationException {
         this.digitDetector = new DigitDetector();
         Map output = new HashMap();
-        Mat source = Imgcodecs.imread(file.getPath(), Imgcodecs.CV_LOAD_IMAGE_COLOR);
+        Mat source = Imgcodecs.imread(file.getPath(), Imgcodecs.IMREAD_COLOR);
         Size size = new Size(2480, 3508);
 //            Rect source_rect = new Rect(0, 0, 2480, 3508);
         Mat source_resize = new Mat();
@@ -228,31 +228,6 @@ public class OpencvServiceImpl implements OpencvService {
             }
         }
         return result;
-    }
-
-    private String readPdf(String pdfPath) throws IOException {
-        StringBuilder stringBuilder = new StringBuilder();
-        try (PDDocument document = PDDocument.load(new File(pdfPath))) {
-
-            document.getClass();
-
-
-            PDFTextStripperByArea stripper = new PDFTextStripperByArea();
-            stripper.setSortByPosition(true);
-
-            PDFTextStripper tStripper = new PDFTextStripper();
-
-            String pdfFileInText = tStripper.getText(document);
-            //System.out.println("Text:" + st);
-
-            // split by whitespace
-            String[] lines = pdfFileInText.split("\\r?\\n");
-            for (String line : lines) {
-                stringBuilder.append(line);
-            }
-
-        }
-        return stringBuilder.toString();
     }
 
 
